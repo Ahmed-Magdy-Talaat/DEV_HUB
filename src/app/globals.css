@@ -4,8 +4,27 @@
 
 @import url("../styles/theme.css");
 
+.font-spaceGrotesk {
+  font-family: var(--font_spaceGrotesk), sans-serif;
+  /* Optionally, you can specify additional properties such as font weight or size */
+}
+
+.font-Inter {
+  font-family: var(--font_Inter), sans-serif;
+  /* Optionally, you can specify additional properties such as font weight or size */
+}
+
+/* Assign Space Grotesk font to --font_spaceGrotesk variable */
+:root {
+  --font_spaceGrotesk: "Space Grotesk", sans-serif; /* Replace 'Space Grotesk' with your actual font name */
+}
 body {
   font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+  border-style: none;
+  outline: none;
 }
 
 @layer utilities {
@@ -44,7 +63,9 @@ body {
   .primary-gradient {
     background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
   }
-
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus;
+  }
   .dark-gradient {
     background: linear-gradient(
       232deg,
@@ -55,9 +76,6 @@ body {
 
   .tab {
     @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-5;
-  }
-  .no-focus {
-    @apply focus-visible:ring-0 focus-visible:ring-transparent focus;
   }
 }
 
